@@ -31,9 +31,9 @@ const Home = ({ products, bannerData }) => {
         <br/>
         <input
           type="text"
-          placeholder="...Search"
+          placeholder="Search Game Catalog"
+          className="game-search"
           onChange={(event) => setSearchTerm(event.target.value)}
-          style={{width: 400}}
         />
       </div>
 
@@ -70,7 +70,7 @@ const Home = ({ products, bannerData }) => {
       )}
 
       <div className="products-heading">
-        <h2>Best Selling Products</h2>
+        <h2>Best Sellers</h2>
         <br/>
         <p>Games Rated 5/5</p>
       </div>

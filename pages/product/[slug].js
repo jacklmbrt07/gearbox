@@ -128,7 +128,7 @@ const ProductDetails = ({ product, products }) => {
       <div className="maylike-products-wrapper">
         <h2>You may also like</h2>
         <div className="marquee">
-          <div className={`maylike-products-container ${productsByGenre >= 4 ? 'track' : ''}`}>
+          <div className={`maylike-products-container ${productsByGenre.length >= 3 ? 'track' : ''}`}>
             {productsByGenre.map((item) => (
               <Product key={item._id} product={item} />
             ))}

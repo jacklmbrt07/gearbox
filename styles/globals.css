@@ -210,6 +210,9 @@ span.text-red {
   margin: 40px 0px;
   color: #ffffff;
 }
+.game-search {
+  width: 400px;
+}
 .products-heading h2 {
   font-size: 40px;
   font-weight: 800;
@@ -257,7 +260,7 @@ span.text-red {
   /* top: -35%;
   left: 8%; */
   top: 10%;
-  left: 25%;
+  left: 35%;
   width: 30%;
   height: auto;
 }
@@ -643,10 +646,10 @@ span.text-red {
     margin-top: 80px;
   }
   .footer-banner-image {
-    width: 77%;
-    left: 30%;
-    top: 6%;
-    height: 56%;
+    width: 50%;
+    left: 50%;
+    top: 30%;
+    height: auto;
   }
   .banner-desc .left h3 {
     font-weight: 900;
@@ -669,8 +672,21 @@ span.text-red {
     flex-wrap: wrap;
     gap: 20px;
   }
+  .left p {
+    margin-left: 0;
+  }
   .hero-banner-container {
     line-height: 1.3;
+  }
+  .hero-banner-container h1 {
+    margin-left: 0;
+  }
+  .hero-banner-gif {
+    position: absolute;
+    top: 50%;
+    right: 7%;
+    width: 300px;
+    height: 300px;
   }
   .hero-banner-container h1 {
     font-size: 50px;
@@ -679,7 +695,7 @@ span.text-red {
     font-size: 40px;
   }
   .hero-banner-container button {
-    margin-top: 90px;
+    margin-top: 10px;
     z-index: 10000;
   }
   .desc {
@@ -689,8 +705,8 @@ span.text-red {
     flex-wrap: wrap;
   }
   .product-detail-container .product-detail-image {
-    width: 350px;
-    height: 350px;
+    width: 100%;
+    height: auto;
   }
   .cart-container {
     width: 415px;
@@ -708,6 +724,14 @@ span.text-red {
   .product .cart-product-image {
     width: 25%;
     height: 25%;
+  }
+  .game-search {
+    width: 200px;
+  }
+  .product-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
   }
   .buttons .add-to-cart {
     width: 150px;
