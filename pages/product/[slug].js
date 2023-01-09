@@ -12,20 +12,29 @@ import { useStateContext } from "../../context/StateContext";
 import { toFullDate } from "../../public/utils";
 
 const ProductDetails = ({ product, products }) => {
-  const { image, name, details, price, reviewRating, releaseDate } = product;
+  const {
+    image,
+    name,
+    details,
+    price,
+    reviewRating,
+    releaseDate,
+    genre,
+    category,
+  } = product;
   const [index, setIndex] = useState(0);
   const { decQty, incQty, qty, onAdd } = useStateContext();
-  const stars = []
+  const stars = [];
 
-  for(let i = 1; i <= 5; i++){
-    if(reviewRating >= i){
-      stars.push(<AiFillStar />)
+  for (let i = 1; i <= 5; i++) {
+    if (reviewRating >= i) {
+      stars.push(<AiFillStar />);
     } else {
-      stars.push(<AiOutlineStar />)
+      stars.push(<AiOutlineStar />);
     }
   }
 
-  const releaseDateFull = toFullDate(releaseDate)
+  const releaseDateFull = toFullDate(releaseDate);
 
   return (
     <div>
@@ -54,13 +63,27 @@ const ProductDetails = ({ product, products }) => {
         <div className="product-detail-desc">
           <h1>{name}</h1>
           <div className="reviews">
-            <div>
-              {stars}
-            </div>
+            <div>{stars}</div>
             <p>(20)</p>
           </div>
-          <h4>Relase Date: </h4>
-          <p>{releaseDateFull}</p>
+          <div className="product-detail-box">
+            <div>
+              <p>
+                <strong>Relase Date: </strong>
+                {releaseDateFull}
+              </p>
+            </div>
+            <div>
+              <p>
+              <strong>Genre: </strong>
+                {genre}</p>
+            </div>
+            <div>
+              <p>
+              <strong>Category: </strong>
+                {category}</p>
+            </div>
+          </div>
           <h4>Details: </h4>
           <p>{details}</p>
           <p className="price">${price}</p>

@@ -477,6 +477,11 @@ span.text-red {
   margin-top: 30px;
   color: #f02d34;
 }
+.product-detail-box {
+  display: flex;
+  justify-content: flex-start;
+  gap: 40px;}
+
 .price .old-price,
 .product-price .old-price,
 .price .old-price {
