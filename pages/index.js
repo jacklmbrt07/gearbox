@@ -71,6 +71,7 @@ const Home = ({ products, bannerData }) => {
 
       <div className="products-heading">
         <h2>Best Selling Products</h2>
+        <br/>
         <p>Games Rated 5/5</p>
       </div>
       <div className="products-container">
