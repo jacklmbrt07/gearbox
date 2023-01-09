@@ -9,11 +9,23 @@ import {
 import { client, urlFor } from "../../lib/client";
 import { Product } from "../../components";
 import { useStateContext } from "../../context/StateContext";
+import { toFullDate } from "../../public/utils";
 
 const ProductDetails = ({ product, products }) => {
-  const { image, name, details, price } = product;
+  const { image, name, details, price, reviewRating, releaseDate } = product;
   const [index, setIndex] = useState(0);
   const { decQty, incQty, qty, onAdd } = useStateContext();
+  const stars = []
+
+  for(let i = 1; i <= 5; i++){
+    if(reviewRating >= i){
+      stars.push(<AiFillStar />)
+    } else {
+      stars.push(<AiOutlineStar />)
+    }
+  }
+
+  const releaseDateFull = toFullDate(releaseDate)
 
   return (
     <div>
@@ -43,14 +55,12 @@ const ProductDetails = ({ product, products }) => {
           <h1>{name}</h1>
           <div className="reviews">
             <div>
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiFillStar />
-              <AiOutlineStar />
+              {stars}
             </div>
             <p>(20)</p>
           </div>
+          <h4>Relase Date: </h4>
+          <p>{releaseDateFull}</p>
           <h4>Details: </h4>
           <p>{details}</p>
           <p className="price">${price}</p>
