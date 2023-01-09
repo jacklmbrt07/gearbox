@@ -255,8 +255,10 @@ span.text-red {
   position: absolute;
   /* top: -35%;
   left: 8%; */
-  top: -25%;
+  top: 10%;
   left: 25%;
+  width: 30%;
+  height: auto;
 }
 .banner-desc .right {
   line-height: 1.4;
