@@ -2,10 +2,17 @@ import React, { useState } from "react";
 
 import { client } from "../lib/client";
 import { Product, FooterBanner, HeroBanner } from "../components";
+import Pagination from "../components/Pagination";
 
 const Home = ({ products, bannerData }) => {
   console.log("products", products);
   const [searchTerm, setSearchTerm] = useState("");
+  const [currentPage, setCurrentPage] = useState(1);
+  const [postsPerPage, setPostsPerPage] = useState(5);
+
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentPost = products.slice(firstPostIndex, lastPostIndex);
 
   return (
     <div>
@@ -15,22 +22,33 @@ const Home = ({ products, bannerData }) => {
         <h2>Best Selling Products</h2>
         <p>Speakers of many variations</p>
       </div>
-      <div className="search">
-        <div className="products-container">
+      <div className="products-container">
+        {currentPost.map((product) => (
+          <Product key={product._id} product={product} />
+        ))}
+      </div>
+      <Pagination
+        totalPosts={products.length}
+        postsPerPage={postsPerPage}
+        setCurrentPage={setCurrentPage}
+        currentPage={currentPage}
+      />
+
+      {/* <div className="products-container">
           {products?.map((product) => (
             <Product key={product._id} product={product} />
           ))}
-        </div>
+        </div> */}
 
-        <div className="products-heading">
-          <h2>Search our Catalog</h2>
-          <input
-            type="text"
-            placeholder="...Search"
-            onChange={(event) => setSearchTerm(event.target.value)}
-          />
-        </div>
+      <div className="products-heading">
+        <h2>Search our Catalog</h2>
+        <input
+          type="text"
+          placeholder="...Search"
+          onChange={(event) => setSearchTerm(event.target.value)}
+        />
       </div>
+
       <div className="products-container">
         {searchTerm &&
           products
