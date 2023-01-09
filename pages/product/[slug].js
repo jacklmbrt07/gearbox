@@ -36,6 +36,15 @@ const ProductDetails = ({ product, products }) => {
 
   const releaseDateFull = toFullDate(releaseDate);
 
+  const productsByGenre = products.filter((game) => {
+    if (
+      !game.genre ||
+      game.genre.toLowerCase() == product.genre.toLowerCase()
+    ) {
+      return game;
+    }
+  });
+
   return (
     <div>
       <div className="product-detail-container">
@@ -75,13 +84,15 @@ const ProductDetails = ({ product, products }) => {
             </div>
             <div>
               <p>
-              <strong>Genre: </strong>
-                {genre}</p>
+                <strong>Genre: </strong>
+                {genre}
+              </p>
             </div>
             <div>
               <p>
-              <strong>Category: </strong>
-                {category}</p>
+                <strong>Category: </strong>
+                {category}
+              </p>
             </div>
           </div>
           <h4>Details: </h4>
@@ -118,7 +129,7 @@ const ProductDetails = ({ product, products }) => {
         <h2>You may also like</h2>
         <div className="marquee">
           <div className="maylike-products-container track">
-            {products.map((item) => (
+            {productsByGenre.map((item) => (
               <Product key={item._id} product={item} />
             ))}
           </div>
@@ -156,8 +167,6 @@ export const getStaticProps = async ({ params: { slug } }) => {
 
   const product = await client.fetch(query);
   const products = await client.fetch(productsQuery);
-
-  console.log(product);
 
   return {
     props: { products, product },
