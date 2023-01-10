@@ -77,7 +77,7 @@ export const getStaticPaths = async () => {
 
 ![Product Page](./static/images/ss_4.png)
 
-The Cart does not currently support any actualy buying. But you can dynamically add and remove items from the shopping cart. To view, simply click the icon in the top right corner. 
+The Cart does not currently support any actual purchasing. You can dynamically add and remove items from the shopping cart. To view, simply click the icon in the top right corner. 
 
 ![Cart](./static/images/ss_5.png)
 
