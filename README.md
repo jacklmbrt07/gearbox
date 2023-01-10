@@ -6,7 +6,7 @@ Prompt: Develop a page that will allow a user to search for Games sold in a Game
 
 Extra Credit: Show the top 10 best sellers to users. Expect high load usage page with your preferred caching mechanism and state the reasons why used it
 
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). This Project is built with React front-end Framework.
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app). This Project is built with React front-end Framework. Next.js Allows this project to render all components before displaying, allowing this page and caching to be super fast. 
 
 ## Getting Started
 
