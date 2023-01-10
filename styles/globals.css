@@ -365,16 +365,20 @@ span.text-red {
   display: flex;
   justify-content: space-between;
   width: 350px;
-  color: #ffffff;
+  color: #000000;
 }
 .item-desc .bottom {
   margin-top: 60px;
 }
 .flex h5 {
   font-size: 24px;
+  color: #000000;
+
 }
 .flex h4 {
   font-size: 20px;
+  color: #000000;
+
 }
 .total {
   display: flex;
@@ -382,6 +386,8 @@ span.text-red {
 }
 .total h3 {
   font-size: 22px;
+  color: #000000;
+
 }
 .remove-item {
   font-size: 24px;
