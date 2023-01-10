@@ -107,3 +107,8 @@ The index uses this important ternary that displays the games depending on wheth
 
 ![pagination](./static/images/pagination.png)
 
+## Thank you
+
+All of the images and item detail descriptions are courtesy of https://www.gearboxsoftware.com/games/ .
+Everything in this project is purely for demonstrational purposes only. 
+
