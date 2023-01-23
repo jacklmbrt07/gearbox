@@ -18,13 +18,9 @@ const Home = ({ products, bannerData }) => {
     }
   });
 
-  console.log("products", products);
-  console.log("bestsellers: ", bestSellers);
-
   return (
     <div>
       <HeroBanner heroBanner={bannerData.length && bannerData[0]} />
-
       <div className="products-heading">
         <h2>All Games</h2>
         <p>Use Search bar below or scroll through page numbers.  </p>
